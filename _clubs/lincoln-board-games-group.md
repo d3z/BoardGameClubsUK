@@ -12,7 +12,7 @@ location:
 cost: "Free"
 age_restriction: ""
 image: ""
-website: "https://lincolnboardgames.org.uk/"
+website: "https://lincolnboardgames.blogspot.com/"
 facebook: "https://www.facebook.com/groups/lincolnboardgames/"
 discord: ""
 bgg: ""
