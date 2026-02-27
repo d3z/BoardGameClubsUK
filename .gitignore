@@ -7,3 +7,5 @@ Gemfile.lock
 .DS_Store
 *.swp
 *.swo
+CLAUDE.md
+.claude/
