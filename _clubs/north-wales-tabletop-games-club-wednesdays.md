@@ -9,7 +9,7 @@ location:
   address: "Earl Road, Mold, CH7 1AP"
   lat: 53.1669879
   lng: -3.1430934
-cost: "£3 per session, first session free"
+cost: "£3 (First Session Free)"
 age_restriction: ""
 image: "north_gaming_wales.jpeg"
 website: "https://www.northwalestabletop.org/"

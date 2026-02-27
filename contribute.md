@@ -52,7 +52,7 @@ description: >-
 | Field | Description |
 |-------|-------------|
 | `name` | Your club's full name |
-| `day` | The primary day you meet (Monday through Sunday) |
+| `day` | The primary day you meet (Monday through Sunday, or "Various" for ad hoc clubs) |
 | `secondary_days` | Additional days, e.g. `["Friday", "Sunday"]` |
 | `time` | When you meet, e.g. "7:00pm - 10:00pm" |
 | `frequency` | "Weekly", "Fortnightly", or "Monthly" |

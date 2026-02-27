@@ -9,7 +9,7 @@ location:
   address: "39 Gay St, Bath BA1 2NT"
   lat: 51.38541548231333
   lng: -2.3592287765925333
-cost: "£5 with refreshments, £7.50 without"
+cost: "£5"
 age_restriction: ""
 image: "bath_gaming_group.png"
 website: ""

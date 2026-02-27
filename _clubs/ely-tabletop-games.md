@@ -9,7 +9,7 @@ location:
   address: "69 Newnham St, Ely, CB7 4PQ"
   lat: 52.401241302490234
   lng: 0.26717790961265564
-cost: "Free, but please buy a drink at the bar"
+cost: "Free"
 age_restriction: ""
 image: "ely_tabletop.jpg"
 website: ""

@@ -9,7 +9,7 @@ location:
   address: "62 Ledger Lane, Outwood, Wakefield, West Yorkshire, WF1 2NS"
   lat: 53.710768
   lng: -1.506658
-cost: "£5, first week free"
+cost: "£5 (First Session Free)"
 age_restriction: ""
 image: ""
 website: ""
