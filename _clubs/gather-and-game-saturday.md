@@ -1,5 +1,5 @@
 ---
-name: "The Brotherhood of the Dice (Saturday)"
+name: "Gather & Game Barnsley (Saturday)"
 day: "Saturday"
 secondary_days: []
 time: "From 6:00pm"
