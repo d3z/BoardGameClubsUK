@@ -5,10 +5,10 @@ secondary_days: ["Sunday"]
 time: "From 7:00pm (18+ only, not wheelchair accessible)"
 frequency: "Weekly"
 location:
-  name: "Vitello Lounge"
-  address: "Brook Street, Ilkley"
-  lat: 53.9247
-  lng: -1.8225
+  name: "The Lister Arms"
+  address: "14 The Moors Shopping Centre, S Hawksworth St, Ilkley, LS29 9LB"
+  lat: 53.9257
+  lng: -1.8258
 cost: "Free"
 age_restriction: "18+"
 website: ""
