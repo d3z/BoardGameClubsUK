@@ -1,5 +1,5 @@
 ---
-name: "Blood on the Clocktower Warrington"
+name: "Wolves of Ravenswood"
 day: "Monday"
 secondary_days: []
 time: "7:00pm"
@@ -14,7 +14,7 @@ age_restriction: ""
 image: ""
 website: ""
 facebook: ""
-discord: ""
+discord: "https://discord.gg/U7aaBNW6qp"
 bgg: ""
 description: >-
   Fun, inclusive and beginner friendly games of Blood on the Clocktower. Meets on the first Monday of every month.
