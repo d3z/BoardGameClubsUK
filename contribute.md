@@ -58,7 +58,7 @@ description: >-
 | `frequency` | "Weekly", "Fortnightly", or "Monthly" |
 | `location` | Venue name, full address, and coordinates |
 | `cost` | Entry fee, e.g. "£2", "£2.50", or "Free" |
-| `image` | A URL or filename in `assets/images/clubs/` |
+| `image` | A URL or filename in `assets/images/clubs/` (see [Adding a Logo](#adding-a-logo) below) |
 | `website` | Link to your club's website |
 | `facebook` | Link to your club's Facebook page or group |
 | `discord` | Discord invite link |
@@ -76,6 +76,15 @@ To get the latitude and longitude for your venue:
 ### 5. Submit a pull request
 
 Commit your file and [open a pull request](https://github.com/BoardGameClubs/BoardGameClubs_Web/pulls). We'll review it and merge it in.
+
+## Adding a Logo
+
+You can add a logo or image for your club:
+
+1. Upload your image to the `assets/images/clubs/` folder in the repository (PNG or JPG, ideally square and under 200KB)
+2. Set the `image` field in your club file to the filename, e.g. `image: "your-club-logo.png"`
+
+Alternatively, you can use a direct URL to an image hosted elsewhere, e.g. `image: "https://example.com/logo.png"`
 
 ## Updating an Existing Club
 
