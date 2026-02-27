@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/meeple-map-icon.svg" alt="BoardGameClubs.uk" width="80">
+
 # BoardGameClubs.uk
 
 **Find your nearest board game club in the UK.**

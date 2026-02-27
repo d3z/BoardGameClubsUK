@@ -16,6 +16,24 @@
 
   .site-brand {
     display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-text;
+    }
+  }
+
+  .site-logo {
+    height: 36px;
+    width: auto;
+  }
+
+  .site-brand-text {
+    display: flex;
     flex-direction: column;
   }
 
@@ -24,7 +42,6 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: $color-text;
-    text-decoration: none;
     letter-spacing: -0.02em;
     line-height: 1.2;
 
@@ -32,17 +49,17 @@
       font-weight: 400;
       color: $color-accent;
     }
+  }
 
-    &:hover {
-      color: $color-primary-light;
-      text-decoration: none;
-    }
+  .site-brand:hover .site-title {
+    color: $color-primary-light;
   }
 
   .site-tagline {
     font-size: 0.68rem;
     color: $color-text-light;
     letter-spacing: 0.01em;
+    line-height: 1.2;
   }
 
   nav {

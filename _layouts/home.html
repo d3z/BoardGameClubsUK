@@ -6,10 +6,13 @@
 <body>
   <header class="site-header site-header--home">
     <div class="header-inner">
-      <div class="site-brand">
-        <a href="{{ '/' | relative_url }}" class="site-title">BoardGameClubs<span class="site-title-tld">.uk</span></a>
-        <span class="site-tagline">Community-built. Open source. Find your table.</span>
-      </div>
+      <a href="{{ '/' | relative_url }}" class="site-brand">
+        <img src="{{ '/assets/meeple-map-icon.svg' | relative_url }}" alt="" class="site-logo">
+        <div class="site-brand-text">
+          <span class="site-title">BoardGameClubs<span class="site-title-tld">.uk</span></span>
+          <span class="site-tagline">Community-built. Open source. Find your table.</span>
+        </div>
+      </a>
       <div class="header-search">
         <div class="search-bar">
           <i data-lucide="search" class="search-icon"></i>
