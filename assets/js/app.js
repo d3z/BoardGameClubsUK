@@ -72,7 +72,7 @@
           var imgSrc = club.image.indexOf("://") !== -1
             ? escapeHtml(club.image)
             : baseurl + "/assets/images/clubs/" + encodeURIComponent(club.image);
-          icon = '<div class="club-icon-wrap"><img src="' + imgSrc + '" alt="" loading="lazy"></div>';
+          icon = '<div class="club-icon-wrap"><img src="' + imgSrc + '" alt="" loading="lazy" onload="window.GameClub.applyImgBg(this)"></div>';
         }
 
         return (

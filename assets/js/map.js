@@ -58,7 +58,7 @@
           var imgSrc = club.image.indexOf("://") !== -1
             ? self.escapeHtml(club.image)
             : baseurl + "/assets/images/clubs/" + encodeURIComponent(club.image);
-          popupIcon = '<div class="popup-icon-wrap"><img src="' + imgSrc + '" alt=""></div>';
+          popupIcon = '<div class="popup-icon-wrap"><img src="' + imgSrc + '" alt="" onload="window.GameClub.applyImgBg(this)"></div>';
         }
 
         var popupContent =

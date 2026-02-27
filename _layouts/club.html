@@ -51,9 +51,9 @@ layout: default
     {% if page.image and page.image != "" %}
     <div class="club-detail-icon">
       {% if page.image contains "://" %}
-      <img src="{{ page.image }}" alt="{{ page.name }} logo">
+      <img src="{{ page.image }}" alt="{{ page.name }} logo" onload="try{var c=document.createElement('canvas');c.width=this.naturalWidth;c.height=this.naturalHeight;var x=c.getContext('2d');x.drawImage(this,0,0);var d=x.getImageData(0,0,1,1).data;this.style.backgroundColor='rgb('+d[0]+','+d[1]+','+d[2]+')'}catch(e){}">
       {% else %}
-      <img src="{{ '/assets/images/clubs/' | append: page.image | relative_url }}" alt="{{ page.name }} logo">
+      <img src="{{ '/assets/images/clubs/' | append: page.image | relative_url }}" alt="{{ page.name }} logo" onload="try{var c=document.createElement('canvas');c.width=this.naturalWidth;c.height=this.naturalHeight;var x=c.getContext('2d');x.drawImage(this,0,0);var d=x.getImageData(0,0,1,1).data;this.style.backgroundColor='rgb('+d[0]+','+d[1]+','+d[2]+')'}catch(e){}">
       {% endif %}
     </div>
     {% endif %}
