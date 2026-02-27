@@ -1,10 +1,14 @@
 <header class="site-header">
   <div class="header-inner">
-    <a href="{{ '/' | relative_url }}" class="site-title"><span class="site-title-icon">🎲</span> <strong>BoardGameClubs</strong><span class="site-title-tld">.uk</span></a>
+    <div class="site-brand">
+      <a href="{{ '/' | relative_url }}" class="site-title">BoardGameClubs<span class="site-title-tld">.uk</span></a>
+      <span class="site-tagline">Community-built. Open source. Find your table.</span>
+    </div>
     <nav>
       <a href="{{ '/' | relative_url }}">Map</a>
       <a href="{{ '/about' | relative_url }}">About</a>
-      <a href="{{ '/contribute' | relative_url }}" class="nav-cta">Add a Club</a>
+      <a href="{{ '/contribute' | relative_url }}" class="nav-cta">+ Add a Club</a>
+      <a href="https://github.com" target="_blank" rel="noopener" class="nav-github" aria-label="GitHub"><i data-lucide="github"></i></a>
     </nav>
   </div>
 </header>

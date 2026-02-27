@@ -1,27 +1,32 @@
+// ─── Charcoal & Teal Palette ───
+// Near-black charcoal with clean teal accents — polished product feel
+
 // Colors
-$color-primary: #3f3a60;
-$color-primary-dark: #2c2845;
-$color-primary-light: #5b5688;
-$color-accent: #ff5100;
-$color-accent-light: #ff7a3d;
-$color-bg: #f7f7f8;
-$color-surface: #ffffff;
-$color-text: #222222;
-$color-text-light: #717171;
-$color-border: #ebebeb;
-$color-tag: #f0eef5;
+$color-primary: #1e293b;        // slate 800 — headings, primary text accents
+$color-primary-dark: #ffffff;   // white — header bar, footer background
+$color-primary-light: #64748b;  // slate 500 — secondary text, hover states
+$color-accent: #ea580c;         // orange 600 — CTA buttons, key accents
+$color-accent-light: #f97316;   // orange 500 — hover states, warm highlights
+$color-bg: #fafafa;             // zinc 50 — page background
+$color-surface: #ffffff;        // white — cards, sidebar
+$color-text: #1e293b;           // slate 800 — primary body text
+$color-text-light: #a1a1aa;     // zinc 400 — secondary text, metadata
+$color-border: #e4e4e7;         // zinc 200 — borders, dividers
+$color-tag: #f4f4f5;            // zinc 100 — default tag background
+$color-tag-day: #334155;        // slate 700 — day tag background
+$color-tag-cost: #059669;       // emerald 600 — cost tag background
+$color-tag-cost-bg: #d1fae5;    // emerald 100 — cost tag background
 
 // Typography
-$font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", sans-serif;
-$font-heading: "Plus Jakarta Sans", $font-body;
+$font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-heading: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 $font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
 // Layout
 $max-width: 1200px;
 $sidebar-width: 440px;
-$border-radius: 12px;
-$border-radius-sm: 6px;
+$border-radius: 10px;
+$border-radius-sm: 5px;
 
 // Breakpoints
 $bp-sm: 576px;

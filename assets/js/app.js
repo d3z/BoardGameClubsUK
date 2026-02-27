@@ -76,16 +76,16 @@
         }
 
         return (
-          '<div class="club-card">' +
+          '<a class="club-card" href="' +
+          escapeHtml(club.url) +
+          '">' +
           '<div class="club-card-body">' +
           icon +
           '<div class="club-card-content">' +
           '<div class="club-card-header">' +
-          '<div class="club-name"><a href="' +
-          escapeHtml(club.url) +
-          '">' +
+          '<div class="club-name">' +
           escapeHtml(club.name) +
-          "</a></div>" +
+          "</div>" +
           distanceBadge +
           "</div>" +
           '<div class="club-tags">' +
@@ -93,7 +93,7 @@
           "</div>" +
           "</div>" +
           "</div>" +
-          "</div>"
+          "</a>"
         );
       })
       .join("");
@@ -125,17 +125,28 @@
 
   function bindEvents() {
     var searchInput = document.getElementById("search-input");
+    var searchInputMobile = document.getElementById("search-input-mobile");
     var dayFilter = document.getElementById("day-filter");
     var distanceFilter = document.getElementById("distance-filter");
 
-    // Search input
+    // Sync both search inputs
+    function onSearchInput(source, other) {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function () {
+        if (other) other.value = source.value;
+        search.setQuery(source.value);
+        update();
+      }, 200);
+    }
+
     if (searchInput) {
       searchInput.addEventListener("input", function () {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(function () {
-          search.setQuery(searchInput.value);
-          update();
-        }, 200);
+        onSearchInput(searchInput, searchInputMobile);
+      });
+    }
+    if (searchInputMobile) {
+      searchInputMobile.addEventListener("input", function () {
+        onSearchInput(searchInputMobile, searchInput);
       });
     }
 
@@ -161,6 +172,7 @@
         // Clear text search when a location is selected via postcode
         search.setQuery("");
         if (searchInput) searchInput.value = "";
+        if (searchInputMobile) searchInputMobile.value = "";
         search.setUserLocation(lat, lng);
         map.showUserLocation(lat, lng);
         // Enable distance filter

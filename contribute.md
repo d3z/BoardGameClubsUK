@@ -45,15 +45,18 @@ description: >-
 
 ### 3. Fill in the details
 
-- **name**: Your club's full name
-- **day**: The primary day you meet (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday)
-- **secondary_days**: If you meet on additional days, list them like `["Friday", "Sunday"]`
-- **time**: When you meet, e.g. "7:00pm - 10:00pm"
-- **frequency**: How often — accepted values: "Weekly", "Fortnightly", or "Monthly" (title-cased)
-- **location**: Venue name, full address, and coordinates
-- **cost**: Entry fee as a currency value (e.g. "£2", "£2.50") or "Free"
-- **image**: A photo of your club — either a URL (e.g. `"https://example.com/photo.jpg"`) or a filename if you add the image to `assets/images/clubs/` (e.g. `"my-club.jpg"`)
-- **website** / **facebook**: Links to your club's web presence
+| Field | Description |
+|-------|-------------|
+| `name` | Your club's full name |
+| `day` | The primary day you meet (Monday through Sunday) |
+| `secondary_days` | Additional days, e.g. `["Friday", "Sunday"]` |
+| `time` | When you meet, e.g. "7:00pm - 10:00pm" |
+| `frequency` | "Weekly", "Fortnightly", or "Monthly" |
+| `location` | Venue name, full address, and coordinates |
+| `cost` | Entry fee, e.g. "£2", "£2.50", or "Free" |
+| `image` | A URL or filename in `assets/images/clubs/` |
+| `website` | Link to your club's website |
+| `facebook` | Link to your club's Facebook page |
 
 ### 4. Find your coordinates
 

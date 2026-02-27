@@ -10,10 +10,11 @@
     init: function () {
       this.map = L.map("map").setView([53.8, -1.58], 9);
 
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
         attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
         maxZoom: 19,
+        subdomains: "abcd",
       }).addTo(this.map);
 
       this.markers = L.markerClusterGroup({
@@ -107,7 +108,7 @@
 
       this.userMarker = L.circleMarker([lat, lng], {
         radius: 10,
-        fillColor: "#4285f4",
+        fillColor: "#c8702a",
         color: "#fff",
         weight: 2,
         opacity: 1,

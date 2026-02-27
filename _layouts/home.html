@@ -4,7 +4,27 @@
   {% include head.html %}
 </head>
 <body>
-  {% include nav.html %}
+  <header class="site-header site-header--home">
+    <div class="header-inner">
+      <div class="site-brand">
+        <a href="{{ '/' | relative_url }}" class="site-title">BoardGameClubs<span class="site-title-tld">.uk</span></a>
+        <span class="site-tagline">Community-built. Open source. Find your table.</span>
+      </div>
+      <div class="header-search">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="Search by postcode, club name, or location..." autocomplete="off">
+          <div class="location-suggestions" id="location-suggestions"></div>
+        </div>
+      </div>
+      <nav>
+        <a href="{{ '/' | relative_url }}">Map</a>
+        <a href="{{ '/about' | relative_url }}">About</a>
+        <a href="{{ '/contribute' | relative_url }}" class="nav-cta">+ Add a Club</a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="nav-github" aria-label="GitHub"><i data-lucide="github"></i></a>
+      </nav>
+    </div>
+  </header>
   <main class="page-content">
     <div class="home-layout">
       <div class="map-container">
@@ -13,9 +33,10 @@
       <div class="sidebar" id="sidebar">
         <div class="drawer-handle" id="drawer-handle"><span></span></div>
         <div class="filter-bar">
-          <div class="search-bar">
-            <input type="text" class="search-input" id="search-input" placeholder="Search by postcode, club name, or location..." autocomplete="off">
-            <div class="location-suggestions" id="location-suggestions"></div>
+          <div class="search-bar sidebar-search">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" class="search-input" id="search-input-mobile" placeholder="Search by postcode, club name, or location..." autocomplete="off">
+            <div class="location-suggestions" id="location-suggestions-mobile"></div>
           </div>
           <div class="filter-row">
             <select class="filter-select" id="day-filter">
@@ -36,14 +57,14 @@
               <option value="50">Within 50 miles</option>
             </select>
             <button class="locate-btn" id="locate-btn" type="button">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+              <i data-lucide="crosshair" style="width:14px;height:14px;"></i>
               <span>Use my location</span>
             </button>
           </div>
           <div class="location-pill" id="location-pill" style="display:none;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <i data-lucide="map-pin" style="width:12px;height:12px;"></i>
             <span id="location-pill-label"></span>
-            <button type="button" id="location-clear" aria-label="Clear location">&times;</button>
+            <button type="button" id="location-clear" aria-label="Clear location"><i data-lucide="x" style="width:12px;height:12px;"></i></button>
           </div>
         </div>
         <div class="result-count" id="result-count"></div>
@@ -72,5 +93,7 @@
   <script src="{{ '/assets/js/location.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/drawer.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

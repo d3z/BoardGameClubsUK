@@ -1,41 +1,62 @@
-// Filter bar
+// ─── Filter bar ───
 .filter-bar {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $color-border;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 
   @media (max-width: 991px) {
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-border;
   }
 }
 
-// Combined search bar
+// ─── Search bar ───
 .search-bar {
   position: relative;
   margin-bottom: 0.5rem;
 }
 
-.search-input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid $color-border;
-  border-radius: $border-radius;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-
-  &:focus {
-    border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
-  }
-
-  &::placeholder {
-    color: #999;
+// Sidebar search: visible on mobile only (header search takes over on desktop)
+.sidebar-search {
+  @media (min-width: 992px) {
+    display: none;
   }
 }
 
-// Filter row (day, distance, locate)
+.search-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: $color-text-light;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 2.25rem 0.7rem 1rem;
+  border: 1.5px solid $color-border;
+  border-radius: $border-radius;
+  font-size: 0.92rem;
+  outline: none;
+  background: $color-surface;
+  color: $color-text;
+  transition: border-color 0.25s, box-shadow 0.25s;
+
+  &:focus {
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.12);
+  }
+
+  &::placeholder {
+    color: $color-text-light;
+  }
+}
+
+// ─── Filter row ───
 .filter-row {
   display: flex;
   gap: 0.4rem;
@@ -52,7 +73,7 @@
 
 .filter-select {
   padding: 0.45rem 0.6rem;
-  border: 1px solid $color-border;
+  border: 1.5px solid $color-border;
   border-radius: $border-radius;
   font-size: 0.8rem;
   color: $color-text;
@@ -62,11 +83,11 @@
   transition: border-color 0.2s;
 
   &:focus {
-    border-color: $color-primary;
+    border-color: $color-accent;
   }
 
   &:disabled {
-    opacity: 0.5;
+    opacity: 0.45;
     cursor: not-allowed;
   }
 }
@@ -78,31 +99,33 @@
   padding: 0.45rem 0.7rem;
   background: $color-surface;
   color: $color-text;
-  border: 1px solid $color-border;
+  border: 1.5px solid $color-border;
   border-radius: $border-radius;
   font-size: 0.8rem;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s;
   margin-left: auto;
 
   svg {
-    color: $color-primary;
+    color: $color-accent;
     flex-shrink: 0;
   }
 
   &:hover {
-    border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.1);
+    transform: translateY(-1px);
   }
 
   &:disabled {
-    opacity: 0.5;
+    opacity: 0.45;
     cursor: not-allowed;
+    transform: none;
   }
 }
 
-// Postcode autocomplete dropdown
+// ─── Postcode autocomplete ───
 .location-suggestions {
   display: none;
   position: absolute;
@@ -111,9 +134,9 @@
   right: 0;
   z-index: 1000;
   background: $color-surface;
-  border: 1px solid $color-border;
+  border: 1.5px solid $color-border;
   border-radius: $border-radius;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   max-height: 240px;
   overflow-y: auto;
   padding: 0.25rem 0;
@@ -135,7 +158,7 @@
   font-size: 0.9rem;
   cursor: pointer;
   color: $color-text;
-  transition: background 0.1s;
+  transition: background 0.15s;
 
   svg {
     color: $color-text-light;
@@ -147,7 +170,7 @@
   }
 }
 
-// Location pill (shown when a location is active)
+// ─── Location pill ───
 .location-pill {
   display: inline-flex;
   align-items: center;
@@ -158,9 +181,11 @@
   font-size: 0.8rem;
   color: $color-primary;
   margin-bottom: 0.25rem;
+  border: 1px solid $color-border;
 
   svg {
     flex-shrink: 0;
+    color: $color-accent;
   }
 
   button {
@@ -179,7 +204,7 @@
   }
 }
 
-// Club cards
+// ─── Club cards ───
 .club-list {
   display: flex;
   flex-direction: column;
@@ -187,15 +212,33 @@
 }
 
 .club-card {
+  display: block;
+  text-decoration: none;
+  color: $color-text;
   background: $color-surface;
-  border: 1px solid $color-border;
+  border: 1.5px solid $color-border;
   border-radius: $border-radius;
-  padding: 1rem 1.1rem;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  animation: fadeSlideIn 0.35s ease both;
+
+  // Stagger entrance: JS-rendered cards won't get nth-child, but noscript ones will
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.03}s;
+    }
+  }
 
   &:hover {
-    border-color: darken($color-border, 8%);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: darken($color-border, 12%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+    text-decoration: none;
+
+    .club-name {
+      color: $color-accent;
+    }
   }
 
   .club-card-body {
@@ -208,11 +251,12 @@
     flex-shrink: 0;
 
     img {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: 8px;
       object-fit: cover;
       display: block;
+      border: 1px solid $color-border;
     }
   }
 
@@ -233,32 +277,26 @@
   }
 
   .club-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
+    color: $color-text;
     flex: 1;
     min-width: 0;
-
-    a {
-      color: $color-text;
-
-      &:hover {
-        color: $color-primary;
-      }
-    }
   }
 
   .club-distance {
-    font-size: 0.75rem;
-    color: $color-text-light;
-    background: $color-tag;
-    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    color: $color-accent;
+    background: rgba($color-accent, 0.08);
+    padding: 0.2rem 0.55rem;
     border-radius: 999px;
     white-space: nowrap;
     flex-shrink: 0;
+    font-weight: 500;
   }
 
   .club-meta {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: $color-text-light;
     margin-bottom: 0.5rem;
 
@@ -270,66 +308,72 @@
   .club-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
-
 }
 
+// ─── Tags ───
 .tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 999px;
   background: $color-tag;
-  color: $color-primary;
+  color: $color-primary-light;
+  letter-spacing: 0.015em;
 }
 
 .tag-day {
-  background: $color-primary;
+  background: $color-tag-day;
   color: #fff;
 }
 
 .tag-cost {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: $color-tag-cost-bg;
+  color: $color-tag-cost;
 }
 
-// Club detail page
+// ─── Club detail page ───
 .club-detail {
   max-width: 720px;
   margin: 0 auto;
   padding: 2.5rem 1.25rem;
+  animation: fadeSlideIn 0.5s ease both;
 
   h1 {
-    color: $color-text;
+    color: $color-primary;
     margin-bottom: 0.5rem;
+    font-size: 2.1rem;
   }
 
   .club-location-subtitle {
     display: block;
-    font-size: 0.55em;
+    font-family: $font-body;
+    font-size: 0.45em;
     font-weight: 400;
     color: $color-text-light;
-    margin-top: 0.15rem;
+    margin-top: 0.2rem;
+    letter-spacing: 0.01em;
   }
 
   .club-detail-heading {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
   }
 
   .club-detail-icon {
     flex-shrink: 0;
 
     img {
-      width: 104px;
-      height: 104px;
+      width: 100px;
+      height: 100px;
       border-radius: $border-radius;
       object-fit: cover;
       display: block;
+      border: 2px solid $color-border;
     }
   }
 
@@ -345,28 +389,33 @@
   .club-detail-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.6rem;
+    gap: 0.45rem;
+    margin-top: 0.65rem;
   }
 
   .detail-map {
     width: 100%;
     height: 280px;
     border-radius: $border-radius;
-    margin-bottom: 1.75rem;
-    border: 1px solid $color-border;
+    margin-bottom: 2rem;
+    border: 2px solid $color-border;
+    overflow: hidden;
   }
 
   .detail-info {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
+    background: $color-tag;
+    border-radius: $border-radius;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid $color-border;
 
     dt {
       font-weight: 600;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: $color-text-light;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-top: 1.25rem;
+      letter-spacing: 0.06em;
+      margin-top: 1.15rem;
 
       &:first-child {
         margin-top: 0;
@@ -374,12 +423,14 @@
     }
 
     dd {
-      margin: 0.3rem 0 0 0;
+      margin: 0.25rem 0 0 0;
+      color: $color-text;
     }
   }
 
   .club-description {
-    line-height: 1.7;
+    line-height: 1.75;
+    color: $color-text;
 
     p {
       margin-bottom: 1rem;
@@ -397,37 +448,47 @@
       align-items: center;
       gap: 0.4rem;
       padding: 0.6rem 1.15rem;
-      border: 1px solid $color-border;
+      border: 1.5px solid $color-border;
       border-radius: $border-radius;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: $color-text;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      background: $color-surface;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
 
       &:hover {
-        border-color: $color-primary;
-        box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+        border-color: $color-accent;
+        box-shadow: 0 0 0 3px rgba($color-accent, 0.1);
+        transform: translateY(-1px);
         text-decoration: none;
       }
     }
   }
 }
 
-// Result count
+// ─── Result count ───
 .result-count {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: $color-text-light;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  font-style: italic;
 }
 
-// Noscript fallback
+// ─── Noscript fallback ───
 noscript .club-list {
   margin-top: 1rem;
 }
 
-// Leaflet popup overrides
+// ─── Leaflet popup overrides ───
+.leaflet-popup-content-wrapper {
+  border-radius: $border-radius !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08) !important;
+  border: 1.5px solid $color-border;
+}
+
 .leaflet-popup-content {
   margin: 0.75rem 1rem;
-  min-width: 280px;
+  min-width: 260px;
+  font-family: $font-body;
 
   .popup-body {
     display: flex;
@@ -439,11 +500,12 @@ noscript .club-list {
     flex-shrink: 0;
 
     img {
-      width: 64px;
-      height: 64px;
-      border-radius: 5px;
+      width: 56px;
+      height: 56px;
+      border-radius: 6px;
       object-fit: cover;
       display: block;
+      border: 1px solid $color-border;
     }
   }
 
@@ -454,41 +516,54 @@ noscript .club-list {
 
   .popup-name {
     font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.15rem;
+    font-size: 0.92rem;
+    margin-bottom: 0.1rem;
 
     a {
       color: $color-text;
       text-decoration: none;
 
       &:hover {
-        color: $color-primary;
+        color: $color-accent;
       }
     }
   }
 
   .popup-venue {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: $color-text-light;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.3rem;
   }
 
   .popup-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 0.2rem;
   }
 }
 
-// Marker cluster overrides
+// ─── Marker cluster overrides ───
 .marker-cluster-small,
 .marker-cluster-medium,
 .marker-cluster-large {
-  background-color: rgba($color-primary, 0.3);
+  background-color: rgba($color-accent, 0.2);
 
   div {
-    background-color: $color-primary;
+    background-color: $color-accent;
     color: #fff;
     font-weight: 600;
+    font-family: $font-body;
   }
+}
+
+.marker-cluster-small div {
+  background-color: $color-accent;
+}
+
+.marker-cluster-medium div {
+  background-color: darken($color-accent, 5%);
+}
+
+.marker-cluster-large div {
+  background-color: darken($color-accent, 10%);
 }
