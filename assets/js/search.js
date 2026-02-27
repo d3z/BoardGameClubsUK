@@ -3,8 +3,9 @@
 
   var GameClubSearch = {
     allClubs: [],
-    activeDay: "all",
     searchQuery: "",
+    dayFilter: "",
+    maxDistance: 0,
     userLat: null,
     userLng: null,
 
@@ -13,12 +14,16 @@
       return this;
     },
 
-    setDay: function (day) {
-      this.activeDay = day;
-    },
-
     setQuery: function (query) {
       this.searchQuery = query.toLowerCase().trim();
+    },
+
+    setDayFilter: function (day) {
+      this.dayFilter = day;
+    },
+
+    setMaxDistance: function (miles) {
+      this.maxDistance = miles ? parseFloat(miles) : 0;
     },
 
     setUserLocation: function (lat, lng) {
@@ -26,18 +31,30 @@
       this.userLng = lng;
     },
 
+    clearUserLocation: function () {
+      this.userLat = null;
+      this.userLng = null;
+      this.allClubs.forEach(function (club) {
+        delete club._distance;
+      });
+    },
+
     getFiltered: function () {
       var self = this;
-      var results = this.allClubs.filter(function (club) {
-        // Day filter
-        if (self.activeDay !== "all") {
-          var matchesDay =
-            club.day === self.activeDay ||
-            (club.secondary_days &&
-              club.secondary_days.indexOf(self.activeDay) !== -1);
-          if (!matchesDay) return false;
-        }
 
+      // Compute distances first if location is set (needed for distance filter)
+      if (self.userLat !== null && self.userLng !== null) {
+        self.allClubs.forEach(function (club) {
+          club._distance = self.haversine(
+            self.userLat,
+            self.userLng,
+            club.location.lat,
+            club.location.lng
+          );
+        });
+      }
+
+      var results = this.allClubs.filter(function (club) {
         // Text search
         if (self.searchQuery) {
           var haystack = [
@@ -53,19 +70,25 @@
           if (haystack.indexOf(self.searchQuery) === -1) return false;
         }
 
+        // Day filter
+        if (self.dayFilter) {
+          var matchesDay = club.day === self.dayFilter;
+          if (!matchesDay && club.secondary_days) {
+            matchesDay = club.secondary_days.indexOf(self.dayFilter) !== -1;
+          }
+          if (!matchesDay) return false;
+        }
+
+        // Distance filter (only when location is set)
+        if (self.maxDistance > 0 && club._distance !== undefined) {
+          if (club._distance > self.maxDistance) return false;
+        }
+
         return true;
       });
 
       // Sort by distance if user location is known
       if (self.userLat !== null && self.userLng !== null) {
-        results.forEach(function (club) {
-          club._distance = self.haversine(
-            self.userLat,
-            self.userLng,
-            club.location.lat,
-            club.location.lng
-          );
-        });
         results.sort(function (a, b) {
           return a._distance - b._distance;
         });

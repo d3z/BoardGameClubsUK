@@ -3,14 +3,15 @@ name: "South Leeds Board Gamers"
 day: "Tuesday"
 secondary_days: []
 time: "7:00pm - 11:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Bruntcliffe Working Men's Club"
   address: "Bruntcliffe Road, Morley, Leeds"
   lat: 53.7470
   lng: -1.5867
-cost: ""
+cost: "Free"
 age_restriction: ""
+image: "south_leeds.png"
 website: "https://www.slbg.club"
 facebook: "https://www.facebook.com/groups/973046293469333"
 description: >-

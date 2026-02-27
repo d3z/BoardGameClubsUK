@@ -17,14 +17,14 @@ name: "Your Club Name"
 day: "Thursday"
 secondary_days: []
 time: "7:00pm - 10:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Venue Name"
   address: "Full Address, Town, Postcode"
   lat: 53.0000
   lng: -1.0000
-cost: ""
-age_restriction: ""
+cost: "Free"
+image: ""
 website: ""
 facebook: ""
 description: >-
@@ -40,13 +40,13 @@ description: >-
 | `day` | Yes | Primary meeting day (Monday-Sunday) |
 | `secondary_days` | No | Array of additional days, e.g. `["Friday"]` |
 | `time` | No | Meeting time, e.g. "7:00pm - 10:00pm" |
-| `frequency` | Yes | "weekly", "fortnightly", "monthly", or custom text |
+| `frequency` | Yes | "Weekly", "Fortnightly", or "Monthly" (title-cased) |
 | `location.name` | Yes | Venue name |
 | `location.address` | Yes | Full address including postcode |
 | `location.lat` | Yes | Latitude (decimal degrees) |
 | `location.lng` | Yes | Longitude (decimal degrees) |
-| `cost` | No | Entry fee, leave empty string if free |
-| `age_restriction` | No | e.g. "16+", "18+", leave empty if none |
+| `cost` | No | Currency value (e.g. "£2") or "Free" |
+| `image` | No | Photo URL or filename in `assets/images/clubs/` |
 | `website` | No | Full URL or empty string |
 | `facebook` | No | Full URL or empty string |
 | `description` | Yes | 1-3 sentence description |
@@ -60,6 +60,16 @@ description: >-
 ## Updating a Club
 
 Edit the relevant file in `_clubs/` and submit a pull request with a brief description of what changed.
+
+## Validating Locally
+
+Before submitting a PR, you can validate your club file:
+
+```bash
+ruby scripts/validate_clubs.rb
+```
+
+This checks all `_clubs/*.md` files for correct frontmatter (required fields, valid day names, coordinate ranges, etc.). The same check runs automatically on every pull request.
 
 ## Local Development
 

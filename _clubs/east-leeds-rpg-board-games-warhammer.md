@@ -3,13 +3,13 @@ name: "East Leeds RPG, Board Games & Warhammer"
 day: "Tuesday"
 secondary_days: []
 time: "6:00pm - 11:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "The Brown Cow"
   address: "Selby Road, Whitkirk, Leeds"
   lat: 53.8063
   lng: -1.4730
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/950975131702269"

@@ -1,14 +1,15 @@
 ---
 layout: default
-title: About
+title: "About Board Game Clubs UK"
+description: "Board Game Clubs UK is a free, community-maintained directory helping you find board game clubs near you across the UK."
 permalink: /about/
 ---
 
 <div class="content-page" markdown="1">
 
-# About GameClub
+# About Board Game Clubs UK
 
-GameClub is a free, community-maintained directory of board game clubs in Yorkshire and beyond. Our goal is simple: help people find their nearest board game club on an interactive map.
+Board Game Clubs UK is a free, community-maintained directory of board game clubs in Yorkshire and beyond. Our goal is simple: help people find their nearest board game club on an interactive map.
 
 ## How It Works
 
@@ -23,7 +24,7 @@ All club data is stored as individual files in our [GitHub repository](https://g
 
 ## No Accounts, No Tracking
 
-GameClub is a static website hosted on GitHub Pages. There are no user accounts, no cookies, and no analytics tracking. The interactive map uses OpenStreetMap, which is free and open source.
+Board Game Clubs UK is a static website hosted on GitHub Pages. There are no user accounts, no cookies, and no analytics tracking. The interactive map uses OpenStreetMap, which is free and open source.
 
 ## Get Involved
 

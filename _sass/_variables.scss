@@ -1,26 +1,27 @@
 // Colors
-$color-primary: #2d6a4f;
-$color-primary-dark: #1b4332;
-$color-primary-light: #40916c;
-$color-accent: #d4a843;
-$color-accent-light: #e9c46a;
-$color-bg: #fafafa;
+$color-primary: #3f3a60;
+$color-primary-dark: #2c2845;
+$color-primary-light: #5b5688;
+$color-accent: #ff5100;
+$color-accent-light: #ff7a3d;
+$color-bg: #f7f7f8;
 $color-surface: #ffffff;
-$color-text: #1a1a2e;
-$color-text-light: #555;
-$color-border: #e0e0e0;
-$color-tag: #edf2ee;
+$color-text: #222222;
+$color-text-light: #717171;
+$color-border: #ebebeb;
+$color-tag: #f0eef5;
 
 // Typography
-$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-  Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", sans-serif;
+$font-heading: "Plus Jakarta Sans", $font-body;
 $font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
 // Layout
 $max-width: 1200px;
-$sidebar-width: 420px;
-$border-radius: 8px;
-$border-radius-sm: 4px;
+$sidebar-width: 440px;
+$border-radius: 12px;
+$border-radius-sm: 6px;
 
 // Breakpoints
 $bp-sm: 576px;

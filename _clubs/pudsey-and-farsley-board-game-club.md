@@ -3,13 +3,13 @@ name: "Pudsey and Farsley Board Game Club"
 day: "Friday"
 secondary_days: []
 time: "6:00pm - 10:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Leodis Games"
   address: "Bagley Lane, Farsley, Leeds"
   lat: 53.8098
   lng: -1.6733
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/PudseyBoardGameClub"

@@ -2,23 +2,76 @@
 layout: default
 ---
 
-<div class="club-detail">
-  <h1>{{ page.name }}</h1>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ page.name | jsonify }},
+  {% if page.description %}"description": {{ page.description | jsonify }},{% endif %}
+  {% if page.website and page.website != "" %}"url": {{ page.website | jsonify }},{% endif %}
+  {% if page.facebook and page.facebook != "" %}"sameAs": [{{ page.facebook | jsonify }}],{% endif %}
+  "location": {
+    "@type": "Place",
+    "name": {{ page.location.name | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{ page.location.address | jsonify }},
+      "addressCountry": "GB"
+    }{% if page.location.lat and page.location.lng %},
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ page.location.lat }},
+      "longitude": {{ page.location.lng }}
+    }{% endif %}
+  }{% if page.day %},
+  "event": {
+    "@type": "Event",
+    "name": {{ page.name | jsonify }},
+    "location": {
+      "@type": "Place",
+      "name": {{ page.location.name | jsonify }},
+      "address": {{ page.location.address | jsonify }}
+    },
+    "eventSchedule": {
+      "@type": "Schedule",
+      "byDay": "https://schema.org/{{ page.day }}",
+      "repeatFrequency": {% if page.frequency == "Weekly" %}"P1W"{% elsif page.frequency == "Fortnightly" %}"P2W"{% elsif page.frequency == "Monthly" %}"P1M"{% else %}{{ page.frequency | jsonify }}{% endif %}
+    }{% if page.cost and page.cost != "" %},
+    "offers": {
+      "@type": "Offer",
+      "price": {{ page.cost | jsonify }},
+      "priceCurrency": "GBP"
+    }{% endif %}
+  }{% endif %}
+}
+</script>
 
-  <div class="club-detail-meta">
-    <span class="tag tag-day">{{ page.day }}</span>
-    {% for d in page.secondary_days %}
-      <span class="tag tag-day">{{ d }}</span>
-    {% endfor %}
-    {% if page.frequency and page.frequency != "weekly" %}
-      <span class="tag">{{ page.frequency }}</span>
+<div class="club-detail">
+  <div class="club-detail-heading">
+    {% if page.image and page.image != "" %}
+    <div class="club-detail-icon">
+      {% if page.image contains "://" %}
+      <img src="{{ page.image }}" alt="{{ page.name }} logo">
+      {% else %}
+      <img src="{{ '/assets/images/clubs/' | append: page.image | relative_url }}" alt="{{ page.name }} logo">
+      {% endif %}
+    </div>
     {% endif %}
-    {% if page.cost %}
-      <span class="tag tag-cost">{{ page.cost }}</span>
-    {% endif %}
-    {% if page.age_restriction %}
-      <span class="tag">{{ page.age_restriction }}</span>
-    {% endif %}
+    <div class="club-detail-heading-text">
+      <h1>{{ page.name }} <span class="club-location-subtitle">Board Game Club in {{ page.location.address }}</span></h1>
+      <div class="club-detail-meta">
+        <span class="tag tag-day">{{ page.day }}</span>
+        {% for d in page.secondary_days %}
+          <span class="tag tag-day">{{ d }}</span>
+        {% endfor %}
+        {% if page.frequency and page.frequency != "Weekly" %}
+          <span class="tag">{{ page.frequency }}</span>
+        {% endif %}
+        {% if page.cost %}
+          <span class="tag tag-cost">{{ page.cost }}</span>
+        {% endif %}
+      </div>
+    </div>
   </div>
 
   {% if page.location.lat and page.location.lng %}
@@ -47,7 +100,7 @@ layout: default
     <dd>{{ page.cost }}</dd>
     {% endif %}
 
-    {% if page.age_restriction %}
+    {% if page.age_restriction and page.age_restriction != "" %}
     <dt>Age Restriction</dt>
     <dd>{{ page.age_restriction }}</dd>
     {% endif %}

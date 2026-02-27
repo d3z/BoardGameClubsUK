@@ -3,13 +3,13 @@ name: "Noble Order of Huddersfield Board Gamers"
 day: "Thursday"
 secondary_days: []
 time: "7:00pm - 10:30pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Gemini Games"
   address: "High Street, Huddersfield"
   lat: 53.6458
   lng: -1.7850
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/huddersfieldboardgamers"

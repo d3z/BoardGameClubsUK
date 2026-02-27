@@ -3,7 +3,7 @@ name: "Calderdale Boardgames and Role Playing Games"
 day: "Wednesday"
 secondary_days: []
 time: "7:00pm - 11:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "The Moorings"
   address: "Sowerby Bridge"

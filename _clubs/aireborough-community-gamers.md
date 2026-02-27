@@ -3,13 +3,13 @@ name: "Aireborough Community Gamers"
 day: "Saturday"
 secondary_days: []
 time: "From 1:00pm til late"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Rawdon Community Library"
   address: "Micklefield Park, New Road Side, Rawdon, Leeds LS19 6DD"
   lat: 53.8467
   lng: -1.6833
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/AireboroughCommunityGamers"

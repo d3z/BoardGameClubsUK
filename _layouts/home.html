@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   {% include head.html %}
 </head>
@@ -10,31 +10,48 @@
       <div class="map-container">
         <div id="map"></div>
       </div>
-      <div class="sidebar">
+      <div class="sidebar" id="sidebar">
+        <div class="drawer-handle" id="drawer-handle"><span></span></div>
         <div class="filter-bar">
-          <input type="text" class="search-input" id="search-input" placeholder="Search clubs by name or location...">
-          <div class="day-filters" id="day-filters">
-            <button class="day-pill active" data-day="all">All</button>
-            <button class="day-pill" data-day="Monday">Mon</button>
-            <button class="day-pill" data-day="Tuesday">Tue</button>
-            <button class="day-pill" data-day="Wednesday">Wed</button>
-            <button class="day-pill" data-day="Thursday">Thu</button>
-            <button class="day-pill" data-day="Friday">Fri</button>
-            <button class="day-pill" data-day="Saturday">Sat</button>
-            <button class="day-pill" data-day="Sunday">Sun</button>
+          <div class="search-bar">
+            <input type="text" class="search-input" id="search-input" placeholder="Search by postcode, club name, or location..." autocomplete="off">
+            <div class="location-suggestions" id="location-suggestions"></div>
           </div>
-          <button class="locate-btn" id="locate-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
-            Find my location
-          </button>
+          <div class="filter-row">
+            <select class="filter-select" id="day-filter">
+              <option value="">All days</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+            <select class="filter-select" id="distance-filter" disabled>
+              <option value="">Any distance</option>
+              <option value="5">Within 5 miles</option>
+              <option value="10">Within 10 miles</option>
+              <option value="25">Within 25 miles</option>
+              <option value="50">Within 50 miles</option>
+            </select>
+            <button class="locate-btn" id="locate-btn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+              <span>Use my location</span>
+            </button>
+          </div>
+          <div class="location-pill" id="location-pill" style="display:none;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span id="location-pill-label"></span>
+            <button type="button" id="location-clear" aria-label="Clear location">&times;</button>
+          </div>
         </div>
         <div class="result-count" id="result-count"></div>
         <div class="club-list" id="club-list"></div>
 
         <noscript>
           <div class="club-list">
-            {% assign sorted_clubs = site.clubs | sort: "day" %}
-            {% for club in sorted_clubs %}
+            {% for club in site.clubs %}
               {% include club-card.html club=club %}
             {% endfor %}
           </div>
@@ -52,6 +69,8 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/location.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/drawer.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
 </body>
 </html>

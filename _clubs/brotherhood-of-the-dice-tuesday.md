@@ -3,13 +3,13 @@ name: "The Brotherhood of the Dice (Tuesday)"
 day: "Tuesday"
 secondary_days: []
 time: "Evenings"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Spiral City"
   address: "The Arcade, Barnsley"
   lat: 53.5530
   lng: -1.4794
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/612334002186959"

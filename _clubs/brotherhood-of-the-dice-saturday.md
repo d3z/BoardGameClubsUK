@@ -3,13 +3,13 @@ name: "The Brotherhood of the Dice (Saturday)"
 day: "Saturday"
 secondary_days: []
 time: "From 6:00pm"
-frequency: "1st and 3rd Saturdays"
+frequency: "Fortnightly"
 location:
   name: "St Georges Church Hall"
   address: "York Street, Barnsley S70 1BD"
   lat: 53.5546
   lng: -1.4798
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/612334002186959"

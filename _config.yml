@@ -1,8 +1,10 @@
-title: GameClub
+title: Board Game Clubs UK
 description: >-
-  Find your nearest board game club in Yorkshire. A free, community-maintained
-  directory of board game clubs with an interactive map.
-url: ""
+  Find your nearest board game club in the UK. A free, community-maintained
+  directory of board game clubs with an interactive map, covering Yorkshire
+  and beyond.
+url: "https://boardgameclubs.uk"
+locale: "en_GB"
 baseurl: ""
 repository: ""
 
@@ -30,3 +32,4 @@ exclude:
   - initial_club_data.md
   - vendor
   - node_modules
+  - scripts

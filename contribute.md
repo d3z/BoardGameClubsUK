@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Add Your Club
+title: "Add Your Board Game Club to Our UK Directory"
+description: "Submit your board game club to Board Game Clubs UK. Our free, community-maintained directory helps people find board game clubs near them across the UK."
 permalink: /contribute/
 ---
 
 <div class="content-page" markdown="1">
 
-# Add Your Club
+# Add Your Board Game Club
 
-GameClub is community-maintained. Anyone can add a new club or update existing information by submitting a pull request on GitHub.
+Board Game Clubs UK is community-maintained. Anyone can add a new club or update existing information by submitting a pull request on GitHub.
 
 ## Step-by-Step Guide
 
@@ -26,14 +27,14 @@ name: "Your Club Name"
 day: "Thursday"
 secondary_days: []
 time: "7:00pm - 10:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Venue Name"
   address: "Full Address, Town, Postcode"
   lat: 53.0000
   lng: -1.0000
-cost: ""
-age_restriction: ""
+cost: "Free"
+image: ""
 website: ""
 facebook: ""
 description: >-
@@ -48,10 +49,10 @@ description: >-
 - **day**: The primary day you meet (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday)
 - **secondary_days**: If you meet on additional days, list them like `["Friday", "Sunday"]`
 - **time**: When you meet, e.g. "7:00pm - 10:00pm"
-- **frequency**: How often - "weekly", "fortnightly", "monthly", or a custom description like "2nd Thursday of the month"
+- **frequency**: How often — accepted values: "Weekly", "Fortnightly", or "Monthly" (title-cased)
 - **location**: Venue name, full address, and coordinates
-- **cost**: Entry fee, or leave blank if free
-- **age_restriction**: e.g. "16+" or "18+", or leave blank if all ages
+- **cost**: Entry fee as a currency value (e.g. "£2", "£2.50") or "Free"
+- **image**: A photo of your club — either a URL (e.g. `"https://example.com/photo.jpg"`) or a filename if you add the image to `assets/images/clubs/` (e.g. `"my-club.jpg"`)
 - **website** / **facebook**: Links to your club's web presence
 
 ### 4. Find your coordinates

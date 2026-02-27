@@ -3,13 +3,13 @@ name: "Ilkley Board Gamers"
 day: "Wednesday"
 secondary_days: ["Sunday"]
 time: "From 7:00pm (18+ only, not wheelchair accessible)"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Vitello Lounge"
   address: "Brook Street, Ilkley"
   lat: 53.9247
   lng: -1.8225
-cost: ""
+cost: "Free"
 age_restriction: "18+"
 website: ""
 facebook: ""

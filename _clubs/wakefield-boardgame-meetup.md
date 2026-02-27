@@ -3,13 +3,13 @@ name: "Wakefield Boardgame Meetup"
 day: "Tuesday"
 secondary_days: []
 time: "5:30pm - 10:00pm"
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "Living Realms"
   address: "Sagar Street, Castleford WF10 1AG"
   lat: 53.7254
   lng: -1.3558
-cost: "£2.50 per person"
+cost: "£2.50"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/886561241893772"

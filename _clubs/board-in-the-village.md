@@ -3,13 +3,13 @@ name: "Board in the Village"
 day: "Wednesday"
 secondary_days: []
 time: ""
-frequency: "weekly"
+frequency: "Weekly"
 location:
   name: "St. James' Church"
   address: "Thornton Road, Thornton, Bradford"
   lat: 53.7863
   lng: -1.8387
-cost: ""
+cost: "Free"
 age_restriction: ""
 website: "https://www.boardinthevillage.co.uk/"
 facebook: "https://www.facebook.com/BoardInTheVilllage"

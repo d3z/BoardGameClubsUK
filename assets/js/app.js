@@ -51,16 +51,12 @@
           });
         }
 
-        if (club.frequency && club.frequency !== "weekly") {
+        if (club.frequency && club.frequency !== "Weekly") {
           tags += '<span class="tag">' + escapeHtml(club.frequency) + "</span>";
         }
 
         if (club.cost) {
           tags += '<span class="tag tag-cost">' + escapeHtml(club.cost) + "</span>";
-        }
-
-        if (club.age_restriction) {
-          tags += '<span class="tag">' + escapeHtml(club.age_restriction) + "</span>";
         }
 
         var distanceBadge = "";
@@ -71,8 +67,19 @@
             " mi</span>";
         }
 
+        var icon = "";
+        if (club.image) {
+          var imgSrc = club.image.indexOf("://") !== -1
+            ? escapeHtml(club.image)
+            : baseurl + "/assets/images/clubs/" + encodeURIComponent(club.image);
+          icon = '<div class="club-icon-wrap"><img src="' + imgSrc + '" alt="" loading="lazy"></div>';
+        }
+
         return (
           '<div class="club-card">' +
+          '<div class="club-card-body">' +
+          icon +
+          '<div class="club-card-content">' +
           '<div class="club-card-header">' +
           '<div class="club-name"><a href="' +
           escapeHtml(club.url) +
@@ -81,16 +88,10 @@
           "</a></div>" +
           distanceBadge +
           "</div>" +
-          '<div class="club-meta">' +
-          "<span>" +
-          escapeHtml(club.location.name) +
-          "</span>" +
-          "<span>" +
-          escapeHtml(club.time || "See details") +
-          "</span>" +
-          "</div>" +
           '<div class="club-tags">' +
           tags +
+          "</div>" +
+          "</div>" +
           "</div>" +
           "</div>"
         );
@@ -103,29 +104,31 @@
   function updateResultCount(shown, total) {
     var el = document.getElementById("result-count");
     if (!el) return;
+
+    var text;
     if (shown === total) {
-      el.textContent = total + " clubs";
+      text = total + " clubs";
     } else {
-      el.textContent = "Showing " + shown + " of " + total + " clubs";
+      text = "Showing " + shown + " of " + total + " clubs";
     }
+
+    var locationLabel = window.GameClubLocation && window.GameClubLocation.getActiveLabel
+      ? window.GameClubLocation.getActiveLabel()
+      : null;
+
+    if (locationLabel) {
+      text += " \u00b7 sorted by nearest to " + locationLabel;
+    }
+
+    el.textContent = text;
   }
 
   function bindEvents() {
-    // Day filter pills
-    var pills = document.querySelectorAll(".day-pill");
-    pills.forEach(function (pill) {
-      pill.addEventListener("click", function () {
-        pills.forEach(function (p) {
-          p.classList.remove("active");
-        });
-        pill.classList.add("active");
-        search.setDay(pill.getAttribute("data-day"));
-        update();
-      });
-    });
+    var searchInput = document.getElementById("search-input");
+    var dayFilter = document.getElementById("day-filter");
+    var distanceFilter = document.getElementById("distance-filter");
 
     // Search input
-    var searchInput = document.getElementById("search-input");
     if (searchInput) {
       searchInput.addEventListener("input", function () {
         clearTimeout(debounceTimer);
@@ -136,35 +139,46 @@
       });
     }
 
-    // Locate button
-    var locateBtn = document.getElementById("locate-btn");
-    if (locateBtn) {
-      locateBtn.addEventListener("click", function () {
-        if (!navigator.geolocation) {
-          alert("Geolocation is not supported by your browser.");
-          return;
-        }
-
-        locateBtn.disabled = true;
-        locateBtn.textContent = "Locating...";
-
-        navigator.geolocation.getCurrentPosition(
-          function (pos) {
-            var lat = pos.coords.latitude;
-            var lng = pos.coords.longitude;
-            search.setUserLocation(lat, lng);
-            map.showUserLocation(lat, lng);
-            locateBtn.textContent = "Location found";
-            update();
-          },
-          function () {
-            locateBtn.disabled = false;
-            locateBtn.textContent = "Find my location";
-            alert("Unable to retrieve your location.");
-          }
-        );
+    // Day filter
+    if (dayFilter) {
+      dayFilter.addEventListener("change", function () {
+        search.setDayFilter(dayFilter.value);
+        update();
       });
     }
+
+    // Distance filter
+    if (distanceFilter) {
+      distanceFilter.addEventListener("change", function () {
+        search.setMaxDistance(distanceFilter.value);
+        update();
+      });
+    }
+
+    // Location autocomplete + geolocation
+    window.GameClubLocation.init(
+      function (lat, lng, label) {
+        // Clear text search when a location is selected via postcode
+        search.setQuery("");
+        if (searchInput) searchInput.value = "";
+        search.setUserLocation(lat, lng);
+        map.showUserLocation(lat, lng);
+        // Enable distance filter
+        if (distanceFilter) distanceFilter.disabled = false;
+        update();
+      },
+      function () {
+        search.clearUserLocation();
+        search.setMaxDistance(0);
+        map.removeUserLocation();
+        // Reset and disable distance filter
+        if (distanceFilter) {
+          distanceFilter.value = "";
+          distanceFilter.disabled = true;
+        }
+        update();
+      }
+    );
   }
 
   function escapeHtml(text) {

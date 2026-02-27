@@ -35,17 +35,47 @@
       clubs.forEach(function (club) {
         if (!club.location.lat || !club.location.lng) return;
 
+        var tags = '<span class="tag tag-day">' + self.escapeHtml(club.day) + "</span>";
+
+        if (club.secondary_days) {
+          club.secondary_days.forEach(function (d) {
+            tags += '<span class="tag tag-day">' + self.escapeHtml(d) + "</span>";
+          });
+        }
+
+        if (club.frequency && club.frequency !== "Weekly") {
+          tags += '<span class="tag">' + self.escapeHtml(club.frequency) + "</span>";
+        }
+
+        if (club.cost) {
+          tags += '<span class="tag tag-cost">' + self.escapeHtml(club.cost) + "</span>";
+        }
+
+        var popupIcon = "";
+        if (club.image) {
+          var baseurl = window.GameClub ? window.GameClub.baseurl : "";
+          var imgSrc = club.image.indexOf("://") !== -1
+            ? self.escapeHtml(club.image)
+            : baseurl + "/assets/images/clubs/" + encodeURIComponent(club.image);
+          popupIcon = '<div class="popup-icon-wrap"><img src="' + imgSrc + '" alt=""></div>';
+        }
+
         var popupContent =
+          '<div class="popup-body">' +
+          popupIcon +
+          '<div class="popup-content">' +
           '<div class="popup-name"><a href="' +
           club.url +
           '">' +
           self.escapeHtml(club.name) +
           "</a></div>" +
-          '<div class="popup-meta">' +
-          self.escapeHtml(club.day) +
-          (club.time ? " &middot; " + self.escapeHtml(club.time) : "") +
-          "<br>" +
+          '<div class="popup-venue">' +
           self.escapeHtml(club.location.name) +
+          "</div>" +
+          '<div class="popup-tags">' +
+          tags +
+          "</div>" +
+          "</div>" +
           "</div>";
 
         var marker = L.marker([club.location.lat, club.location.lng]).bindPopup(
@@ -60,6 +90,13 @@
     fitToMarkers: function () {
       if (this.markers.getLayers().length > 0) {
         this.map.fitBounds(this.markers.getBounds(), { padding: [30, 30] });
+      }
+    },
+
+    removeUserLocation: function () {
+      if (this.userMarker) {
+        this.map.removeLayer(this.userMarker);
+        this.userMarker = null;
       }
     },
 
