@@ -9,13 +9,15 @@ permalink: /contribute/
 
 # Add Your Board Game Club
 
-Board Game Clubs UK is community-maintained. Anyone can add a new club or update existing information by submitting a pull request on GitHub.
+Board Game Clubs UK is community-maintained and hosted on GitHub. Anyone can add a new club or update existing information.
 
-## Step-by-Step Guide
+**[View the project on GitHub](https://github.com/BoardGameClubs/BoardGameClubs_Web)** or, if you're not familiar with GitHub, just **[open an issue with your club's details](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.md&title=Add+club:+Your+Club+Name)** and we'll add it for you.
+
+## Adding a Club via Pull Request
 
 ### 1. Create a new file
 
-Create a new file in the `_clubs/` folder. Name it using the format `your-club-name.md` (lowercase, hyphens instead of spaces).
+[Create a new file](https://github.com/BoardGameClubs/BoardGameClubs_Web/new/main/_clubs) in the `_clubs/` folder on GitHub. Name it using the format `your-club-name.md` (lowercase, hyphens instead of spaces).
 
 ### 2. Copy this template
 
@@ -37,6 +39,8 @@ cost: "Free"
 image: ""
 website: ""
 facebook: ""
+discord: ""
+bgg: ""
 description: >-
   A short description of your club. What games do you play?
   Are newcomers welcome? Any other useful info.
@@ -56,7 +60,9 @@ description: >-
 | `cost` | Entry fee, e.g. "£2", "£2.50", or "Free" |
 | `image` | A URL or filename in `assets/images/clubs/` |
 | `website` | Link to your club's website |
-| `facebook` | Link to your club's Facebook page |
+| `facebook` | Link to your club's Facebook page or group |
+| `discord` | Discord invite link |
+| `bgg` | BoardGameGeek guild or group link |
 
 ### 4. Find your coordinates
 
@@ -69,14 +75,14 @@ To get the latitude and longitude for your venue:
 
 ### 5. Submit a pull request
 
-Commit your file and open a pull request. We'll review it and merge it in.
+Commit your file and [open a pull request](https://github.com/BoardGameClubs/BoardGameClubs_Web/pulls). We'll review it and merge it in.
 
 ## Updating an Existing Club
 
-Find the club's file in the `_clubs/` folder, make your changes, and submit a pull request.
+Find the club's file in the [`_clubs/` folder on GitHub](https://github.com/BoardGameClubs/BoardGameClubs_Web/tree/main/_clubs), make your changes, and submit a pull request.
 
-## Need Help?
+## Not Familiar with GitHub?
 
-If you're not familiar with GitHub, you can [open an issue](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new) with your club's details and we'll add it for you.
+No problem. Just [open an issue](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.md&title=Add+club:+Your+Club+Name) with your club's details and we'll add it for you.
 
 </div>
