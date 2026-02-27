@@ -9,7 +9,7 @@ location:
   address: "Unit 8, Montague Quarter, Worthing, BN11 1YJ"
   lat: 50.8110
   lng: -0.3713
-cost: ""
+cost: "Free"
 age_restriction: ""
 image: ""
 website: ""

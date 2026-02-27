@@ -9,7 +9,7 @@ location:
   address: "32 South Farm Road, Worthing, BN14 7AE"
   lat: 50.8194
   lng: -0.3785
-cost: ""
+cost: "Free"
 age_restriction: ""
 image: ""
 website: ""
