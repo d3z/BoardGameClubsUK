@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/meeple-map-icon.svg" alt="BoardGameClubs.uk" width="80">
+<img src="assets/meeple-map-icon.svg" alt="BoardGameClubs.uk" width="120">
 
 # BoardGameClubs.uk
 
@@ -17,7 +17,7 @@ A community-built directory powered by an interactive map.
 
 </div>
 
----
+<br>
 
 ## What is this?
 
