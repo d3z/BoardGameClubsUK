@@ -9,7 +9,7 @@ layout: default
   "name": {{ page.name | jsonify }},
   {% if page.description %}"description": {{ page.description | jsonify }},{% endif %}
   {% if page.website and page.website != "" %}"url": {{ page.website | jsonify }},{% endif %}
-  {% if page.facebook and page.facebook != "" %}"sameAs": [{{ page.facebook | jsonify }}],{% endif %}
+  "sameAs": [{% if page.facebook and page.facebook != "" %}{{ page.facebook | jsonify }}{% endif %}{% if page.discord and page.discord != "" %}{% if page.facebook and page.facebook != "" %},{% endif %}{{ page.discord | jsonify }}{% endif %}{% if page.bgg and page.bgg != "" %}{% if page.facebook and page.facebook != "" or page.discord and page.discord != "" %},{% endif %}{{ page.bgg | jsonify }}{% endif %}],
   "location": {
     "@type": "Place",
     "name": {{ page.location.name | jsonify }},
@@ -117,6 +117,12 @@ layout: default
     {% endif %}
     {% if page.facebook and page.facebook != "" %}
       <a href="{{ page.facebook }}" target="_blank" rel="noopener"><i data-lucide="facebook" style="width:16px;height:16px;"></i> Facebook</a>
+    {% endif %}
+    {% if page.discord and page.discord != "" %}
+      <a href="{{ page.discord }}" target="_blank" rel="noopener"><i data-lucide="message-circle" style="width:16px;height:16px;"></i> Discord</a>
+    {% endif %}
+    {% if page.bgg and page.bgg != "" %}
+      <a href="{{ page.bgg }}" target="_blank" rel="noopener"><i data-lucide="dice-5" style="width:16px;height:16px;"></i> BGG</a>
     {% endif %}
   </div>
 </div>

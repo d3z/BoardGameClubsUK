@@ -230,14 +230,16 @@
     }
   }
 
-  &:hover {
-    border-color: darken($color-border, 12%);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    transform: translateY(-2px);
-    text-decoration: none;
+  @media (min-width: $bp-lg) {
+    &:hover {
+      border-color: darken($color-border, 12%);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+      text-decoration: none;
 
-    .club-name {
-      color: $color-accent;
+      .club-name {
+        color: $color-accent;
+      }
     }
   }
 
@@ -245,6 +247,12 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+
+    @media (max-width: $bp-lg - 1) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   .club-icon-wrap {
@@ -274,6 +282,12 @@
     justify-content: space-between;
     gap: 0.75rem;
     margin-bottom: 0.35rem;
+
+    @media (max-width: $bp-lg - 1) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
   }
 
   .club-name {
@@ -309,6 +323,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.3rem;
+
+    @media (max-width: $bp-lg - 1) {
+      justify-content: center;
+    }
   }
 }
 
