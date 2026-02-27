@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "The Brown Cow"
   address: "Selby Road, Whitkirk, Leeds"
-  lat: 53.8063
-  lng: -1.4730
+  lat: 53.7979
+  lng: -1.4503
 cost: "Free"
 age_restriction: ""
 website: ""

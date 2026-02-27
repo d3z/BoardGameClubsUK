@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "Bruntcliffe Working Men's Club"
   address: "Bruntcliffe Road, Morley, Leeds LS27 0LQ"
-  lat: 53.7470
-  lng: -1.5867
+  lat: 53.7432
+  lng: -1.6223
 cost: "Free"
 age_restriction: ""
 image: "south_leeds.png"

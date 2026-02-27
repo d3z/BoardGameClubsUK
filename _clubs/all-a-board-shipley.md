@@ -7,8 +7,8 @@ frequency: "Monthly"
 location:
   name: "The Triangle"
   address: "47 Bradford Road, Shipley BD18 3DS"
-  lat: 53.8321
-  lng: -1.7731
+  lat: 53.8313
+  lng: -1.7833
 cost: "Free"
 age_restriction: ""
 website: ""
