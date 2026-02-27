@@ -7,6 +7,7 @@ url: "https://boardgameclubs.uk"
 locale: "en_GB"
 baseurl: ""
 repository: "BoardGameClubs/BoardGameClubs_Web"
+og_image: /assets/og.png
 
 collections:
   clubs:
@@ -14,6 +15,10 @@ collections:
     permalink: /clubs/:slug/
 
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og.png
   - scope:
       path: ""
       type: "clubs"
