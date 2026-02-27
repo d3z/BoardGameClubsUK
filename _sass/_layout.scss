@@ -300,7 +300,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0 6px;
+    padding: 22px 0 14px;
     cursor: grab;
     touch-action: none;
 
@@ -311,10 +311,10 @@
     user-select: none;
 
     span {
-      width: 40px;
-      height: 4px;
+      width: 48px;
+      height: 5px;
       background: $color-border;
-      border-radius: 2px;
+      border-radius: 3px;
     }
   }
 }
