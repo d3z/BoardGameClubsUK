@@ -322,17 +322,13 @@
   transform: rotate(180deg);
 }
 
-// Lock body on mobile home page
+// Lock body on home page — prevent scrolling at all sizes
 body:has(.home-layout) {
-  @media (max-width: $bp-lg - 1) {
-    height: 100vh;
-    overflow: hidden;
-  }
+  height: 100vh;
+  overflow: hidden;
 
   .site-footer {
-    @media (max-width: $bp-lg - 1) {
-      display: none;
-    }
+    display: none;
   }
 }
 
