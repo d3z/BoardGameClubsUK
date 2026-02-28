@@ -1,19 +1,19 @@
 ---
-name: "The Brotherhood of the Dice (Tuesday)"
-day: "Tuesday"
+name: "Gather & Game Barnsley (Monday)"
+day: "Monday"
 secondary_days: []
 time: "Evenings"
 frequency: "Weekly"
 location:
-  name: "Spiral City"
+  name: "Heart of Handmade"
   address: "The Arcade, Barnsley"
   lat: 53.5530
   lng: -1.4794
-cost: "Free"
+cost: "£2 per session"
 age_restriction: ""
 website: ""
 facebook: "https://www.facebook.com/groups/612334002186959"
 description: >-
-  Weekly smaller session at Spiral City bar. Members also get 10% discount
+  Weekly smaller session at Heart of Handmade. Members also get 10% discount
   at Patriot Games (Sheffield) and Barnsley Models & Games.
 ---
