@@ -9,7 +9,7 @@ permalink: /about/
 
 # About Board Game Clubs UK
 
-Board Game Clubs UK is a free, community-maintained directory of board game clubs in Yorkshire and beyond. Our goal is simple: help people find their nearest board game club on an interactive map.
+Board Game Clubs UK is a free, community-maintained directory of board game clubs across the United Kingdom. Our goal is simple: help people find their nearest board game club on an interactive map.
 
 ## How It Works
 
@@ -22,9 +22,9 @@ Board Game Clubs UK is a free, community-maintained directory of board game club
 
 All club data is stored as individual files in our [GitHub repository](https://github.com/BoardGameClubs/BoardGameClubs_Web). Anyone can submit a pull request to add a new club or update existing information. See our [contribution guide]({{ "/contribute" | relative_url }}) for details.
 
-## No Accounts, No Tracking
+## No Accounts, Privacy Friendly
 
-Board Game Clubs UK is a static website hosted on GitHub Pages. There are no user accounts, no cookies, and no analytics tracking. The interactive map uses OpenStreetMap, which is free and open source.
+Board Game Clubs UK is a static website hosted on GitHub Pages. There are no user accounts and no cookies. We use [GoatCounter](https://www.goatcounter.com/) for basic, privacy-friendly analytics — it collects no personal data, uses no cookies, and is fully open source. The interactive map uses OpenStreetMap, which is free and open source.
 
 ## Get Involved
 
