@@ -15,7 +15,10 @@ Board Game Clubs UK is community-maintained and hosted on GitHub. Anyone can add
 
 The easiest way to add your club is to fill in our form on GitHub. No technical knowledge required - just fill in the details and we'll do the rest.
 
-**[+ Add a Club](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.yml)** | **[Edit a Club](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=edit-club.yml)**
+<div class="contribute-actions">
+  <a href="https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.yml" class="contribute-btn contribute-btn--primary">+ Add a Club</a>
+  <a href="https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=edit-club.yml" class="contribute-btn contribute-btn--secondary">Edit a Club</a>
+</div>
 
 ## Adding a Club via Pull Request
 
@@ -64,7 +67,7 @@ description: >-
 | `frequency` | "Weekly", "Fortnightly", "Monthly", or "Ad-hoc" |
 | `location` | Venue name, full address, and coordinates |
 | `cost` | "Free" or a money amount, e.g. "£2", "£5 (First Session Free)" |
-| `image` | A URL or filename in `assets/images/clubs/` (see [Adding a Logo](#adding-a-logo) below) |
+| `image` | A URL or filename in `assets/images/clubs/` (see [step 5](#5-adding-a-logo) below) |
 | `website` | Link to your club's website |
 | `facebook` | Link to your club's Facebook page or group |
 | `discord` | Discord invite link |
@@ -79,11 +82,7 @@ To get the latitude and longitude for your venue:
 3. Right-click on the map and select "Show address"
 4. The coordinates will appear in the URL bar (lat and lng)
 
-### 5. Submit a pull request
-
-Commit your file and [open a pull request](https://github.com/BoardGameClubs/BoardGameClubs_Web/pulls). We'll review it and merge it in.
-
-## Adding a Logo
+### 5. Adding a logo
 
 You can add a logo or image for your club:
 
@@ -91,6 +90,10 @@ You can add a logo or image for your club:
 2. Set the `image` field in your club file to the filename, e.g. `image: "your-club-logo.png"`
 
 Alternatively, you can use a direct URL to an image hosted elsewhere, e.g. `image: "https://example.com/logo.png"`
+
+### 6. Submit a pull request
+
+Commit your file and [open a pull request](https://github.com/BoardGameClubs/BoardGameClubs_Web/pulls). We'll review it and merge it in.
 
 ## Updating an Existing Club
 

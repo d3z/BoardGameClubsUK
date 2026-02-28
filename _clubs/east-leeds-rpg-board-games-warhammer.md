@@ -11,6 +11,7 @@ location:
   lng: -1.4503
 cost: "Free"
 age_restriction: ""
+image: "east_leeds.png"
 website: ""
 facebook: "https://www.facebook.com/groups/950975131702269"
 description: >-

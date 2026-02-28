@@ -17,10 +17,9 @@ facebook: "https://www.facebook.com/groups/973046293469333"
 discord: "https://discord.gg/vEvyCPNguJ"
 bgg: "https://boardgamegeek.com/guild/3919"
 description: >-
-  A friendly community welcoming players of all experience levels, playing
-  everything from Catan and Ticket to Ride to heavier strategy and war
-  games. Members bring their own collections and are happy to teach
-  newcomers. No registration needed, just turn up. The club also runs
-  regional all-day gaming events throughout the year. Parking and on-site
-  bar available, with takeaway options nearby.
+  A large, active community established for over 5 years, welcoming players
+  of all experience levels. Playing everything from Catan and Ticket to Ride
+  to heavier strategy and war games. Members bring their own collections and
+  are happy to teach newcomers. No registration needed, just turn up.
+  Parking and on-site bar available, with takeaway options nearby.
 ---
