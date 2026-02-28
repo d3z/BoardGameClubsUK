@@ -30,32 +30,9 @@ BoardGameClubs.uk helps people find board game clubs near them. Search by postco
 - Club data is served as JSON and rendered on an interactive [Leaflet](https://leafletjs.com/) map
 - Anyone can add or update a club by submitting a pull request
 
-## Adding a club
+## Adding or editing a club
 
-1. Create a new file in `_clubs/` named `your-club-name.md`
-2. Use the template below and fill in your details
-3. Submit a pull request
-
-```yaml
----
-name: "Your Club Name"
-day: "Thursday"
-secondary_days: []
-time: "7:00pm - 10:00pm"
-frequency: "Weekly"
-location:
-  name: "Venue Name"
-  address: "Full Address, Town, Postcode"
-  lat: 53.0000
-  lng: -1.0000
-cost: "Free"
-image: ""
-website: ""
-facebook: ""
-description: >-
-  A short description of your club.
----
-```
+See the [contribute page](https://boardgameclubs.uk/contribute/) for a full guide on adding a new club or updating an existing listing.
 
 Not comfortable with GitHub? [Open an issue](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new) with your club's details and we'll add it for you.
 
@@ -67,10 +44,6 @@ bundle exec jekyll serve
 ```
 
 Then visit `http://localhost:4000`.
-
-## Contributing
-
-All contributions are welcome - whether it's adding a club, fixing a bug, or improving the site. See the [contribute page](https://boardgameclubs.uk/contribute/) for a full guide.
 
 ## Tech stack
 
