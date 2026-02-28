@@ -1,5 +1,5 @@
 ---
-name: "Ballymen Boardgame Group"
+name: "Ballymena Boardgame Group"
 day: "Thursday"
 secondary_days: []
 time: "7:00pm - 10:30pm"
