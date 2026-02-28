@@ -1,0 +1,26 @@
+name: Edit a Club
+description: Update or correct information for an existing club
+title: "Edit club: "
+labels: ["club update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Let us know what needs changing and we'll update it.
+
+  - type: input
+    id: club_name
+    attributes:
+      label: Which club?
+      placeholder: e.g. Wakefield Warriors
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: What needs updating?
+      description: Tell us what's changed - new time, new venue, updated links, etc.
+      placeholder: We've moved to a new venue...
+    validations:
+      required: true

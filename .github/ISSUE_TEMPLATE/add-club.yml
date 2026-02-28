@@ -1,0 +1,136 @@
+name: Add a Club
+description: Submit your board game club to be added to the directory
+title: "Add club: "
+labels: ["new club"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting your club! Fill in as much as you can and we'll take care of the rest.
+
+  - type: input
+    id: name
+    attributes:
+      label: Club name
+      placeholder: e.g. Wakefield Warriors
+    validations:
+      required: true
+
+  - type: dropdown
+    id: day
+    attributes:
+      label: What day do you meet?
+      options:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+        - Various
+    validations:
+      required: true
+
+  - type: input
+    id: secondary_days
+    attributes:
+      label: Any additional days?
+      placeholder: e.g. Friday, Sunday
+
+  - type: input
+    id: time
+    attributes:
+      label: Time
+      placeholder: e.g. 7:00pm - 10:00pm
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often do you meet?
+      options:
+        - Weekly
+        - Fortnightly
+        - Twice monthly
+        - Monthly
+        - Ad-hoc
+    validations:
+      required: true
+
+  - type: input
+    id: venue_name
+    attributes:
+      label: Venue name
+      placeholder: e.g. The King's Arms
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: Venue address (including postcode)
+      placeholder: e.g. 12 High Street, Leeds, LS1 1AA
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cost
+    attributes:
+      label: Cost
+      options:
+        - Free
+        - £1
+        - £2
+        - £2.50
+        - £3
+        - £5
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: cost_other
+    attributes:
+      label: Cost (if Other)
+      placeholder: e.g. £4, or £5 (First Session Free)
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://
+
+  - type: input
+    id: facebook
+    attributes:
+      label: Facebook page or group
+      placeholder: https://facebook.com/...
+
+  - type: input
+    id: discord
+    attributes:
+      label: Discord invite link
+      placeholder: https://discord.gg/...
+
+  - type: input
+    id: bgg
+    attributes:
+      label: BoardGameGeek link
+      placeholder: https://boardgamegeek.com/...
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Tell us about your club. What games do you play? Are newcomers welcome?
+      placeholder: We're a friendly group who play a wide range of board games...
+    validations:
+      required: true
+
+  - type: textarea
+    id: image
+    attributes:
+      label: Club logo or image
+      description: Drag and drop an image here, or paste a URL. PNG or JPG, ideally square.

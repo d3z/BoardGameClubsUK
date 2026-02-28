@@ -11,9 +11,15 @@ permalink: /contribute/
 
 Board Game Clubs UK is community-maintained and hosted on GitHub. Anyone can add a new club or update existing information.
 
-**[View the project on GitHub](https://github.com/BoardGameClubs/BoardGameClubs_Web)** or, if you're not familiar with GitHub, just **[open an issue with your club's details](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.md&title=Add+club:+Your+Club+Name)** and we'll add it for you.
+## Submit via our form
+
+The easiest way to add your club is to fill in our form on GitHub. No technical knowledge required - just fill in the details and we'll do the rest.
+
+**[+ Add a Club](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.yml)** | **[Edit a Club](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=edit-club.yml)**
 
 ## Adding a Club via Pull Request
+
+If you're comfortable with GitHub, you can add a club directly:
 
 ### 1. Create a new file
 
@@ -55,9 +61,9 @@ description: >-
 | `day` | The primary day you meet (Monday through Sunday, or "Various" for ad hoc clubs) |
 | `secondary_days` | Additional days, e.g. `["Friday", "Sunday"]` |
 | `time` | When you meet, e.g. "7:00pm - 10:00pm" |
-| `frequency` | "Weekly", "Fortnightly", or "Monthly" |
+| `frequency` | "Weekly", "Fortnightly", "Monthly", or "Ad-hoc" |
 | `location` | Venue name, full address, and coordinates |
-| `cost` | Entry fee, e.g. "£2", "£2.50", or "Free" |
+| `cost` | "Free" or a money amount, e.g. "£2", "£5 (First Session Free)" |
 | `image` | A URL or filename in `assets/images/clubs/` (see [Adding a Logo](#adding-a-logo) below) |
 | `website` | Link to your club's website |
 | `facebook` | Link to your club's Facebook page or group |
@@ -88,10 +94,6 @@ Alternatively, you can use a direct URL to an image hosted elsewhere, e.g. `imag
 
 ## Updating an Existing Club
 
-Find the club's file in the [`_clubs/` folder on GitHub](https://github.com/BoardGameClubs/BoardGameClubs_Web/tree/main/_clubs), make your changes, and submit a pull request.
-
-## Not Familiar with GitHub?
-
-No problem. Just [open an issue](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=add-club.md&title=Add+club:+Your+Club+Name) with your club's details and we'll add it for you.
+Find the club's file in the [`_clubs/` folder on GitHub](https://github.com/BoardGameClubs/BoardGameClubs_Web/tree/main/_clubs), make your changes, and submit a pull request. Or just **[open an edit request](https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=edit-club.yml)** and we'll update it for you.
 
 </div>
