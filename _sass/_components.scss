@@ -1,11 +1,39 @@
 // ─── Filter bar ───
 .filter-bar {
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
+  position: sticky;
+  z-index: 10;
+  background: $color-surface;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
 
-  @media (max-width: 991px) {
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
+  // Full-width shadow below the filter bar, hidden by default
+  &::after {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    right: -1.25rem;
+    top: 100%;
+    height: 8px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .sidebar--scrolled & {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $bp-lg) {
+    top: -1.25rem;
+    padding-top: 1.25rem;
+    margin-top: -1.25rem;
+  }
+
+  @media (max-width: $bp-lg - 1) {
+    top: 48px; // below drawer handle
     border-bottom: 1px solid $color-border;
   }
 }
@@ -82,6 +110,8 @@
   outline: none;
   cursor: pointer;
   transition: border-color 0.2s;
+  flex: 1;
+  min-width: 0;
 
   &:focus {
     border-color: $color-accent;
@@ -123,6 +153,28 @@
     opacity: 0.45;
     cursor: not-allowed;
     transform: none;
+  }
+
+  // Hide sidebar locate button on desktop (header one takes over)
+  @media (min-width: $bp-lg) {
+    &:not(.locate-btn--header) {
+      display: none;
+    }
+  }
+}
+
+// Header locate button (desktop only, next to search bar)
+.locate-btn--header {
+  display: none;
+
+  @media (min-width: $bp-lg) {
+    display: inline-flex;
+    margin-left: 0;
+    flex-shrink: 0;
+    // Match header search input height exactly
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+    border-width: 1.5px;
   }
 }
 
@@ -480,6 +532,37 @@
         text-decoration: none;
       }
     }
+  }
+
+  .club-suggest-edit {
+    margin-top: 1.5rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      color: $color-text-light;
+
+      &:hover {
+        color: $color-accent;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.directions-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: $color-accent;
+  margin-left: 0.5rem;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-primary-light;
   }
 }
 

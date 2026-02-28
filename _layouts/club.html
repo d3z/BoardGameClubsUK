@@ -83,7 +83,7 @@ layout: default
     <dd>{{ page.location.name }}</dd>
 
     <dt>Address</dt>
-    <dd>{{ page.location.address }}</dd>
+    <dd>{{ page.location.address }} {% if page.location.lat and page.location.lng %}<a href="https://www.google.com/maps/dir/?api=1&destination={{ page.location.lat }},{{ page.location.lng }}" target="_blank" rel="noopener" class="directions-link"><i data-lucide="navigation" style="width:13px;height:13px;"></i> Directions</a>{% endif %}</dd>
 
     {% if page.time %}
     <dt>Time</dt>
@@ -124,6 +124,10 @@ layout: default
     {% if page.bgg and page.bgg != "" %}
       <a href="{{ page.bgg }}" target="_blank" rel="noopener"><i data-lucide="dice-5" style="width:16px;height:16px;"></i> BGG</a>
     {% endif %}
+  </div>
+
+  <div class="club-suggest-edit">
+    <a href="https://github.com/BoardGameClubs/BoardGameClubs_Web/issues/new?template=edit-club.yml&title=Edit:+{{ page.name | url_encode }}" target="_blank" rel="noopener"><i data-lucide="pencil" style="width:14px;height:14px;"></i> Suggest an edit</a>
   </div>
 </div>
 

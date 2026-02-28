@@ -15,6 +15,7 @@
       })
       .then(function (clubs) {
         search = window.GameClubSearch.init(clubs);
+        restoreFromUrl();
         update();
         bindEvents();
       })
@@ -23,12 +24,62 @@
       });
   }
 
+  function restoreFromUrl() {
+    var params = readUrlParams();
+    var searchInput = document.getElementById("search-input");
+    var searchInputMobile = document.getElementById("search-input-mobile");
+    var dayFilter = document.getElementById("day-filter");
+    var distanceFilter = document.getElementById("distance-filter");
+
+    if (params.q) {
+      search.setQuery(params.q);
+      if (searchInput) searchInput.value = params.q;
+      if (searchInputMobile) searchInputMobile.value = params.q;
+    }
+    if (params.day) {
+      search.setDayFilter(params.day);
+      if (dayFilter) dayFilter.value = params.day;
+    }
+    if (params.distance) {
+      search.setMaxDistance(params.distance);
+      if (distanceFilter) distanceFilter.value = params.distance;
+    }
+  }
+
+  function readUrlParams() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      q: params.get("q") || "",
+      day: params.get("day") || "",
+      distance: params.get("distance") || ""
+    };
+  }
+
+  function writeUrlParams() {
+    var searchInput = document.getElementById("search-input");
+    var dayFilter = document.getElementById("day-filter");
+    var distanceFilter = document.getElementById("distance-filter");
+
+    var params = new URLSearchParams();
+    var q = searchInput ? searchInput.value.trim() : "";
+    var day = dayFilter ? dayFilter.value : "";
+    var distance = distanceFilter ? distanceFilter.value : "";
+
+    if (q) params.set("q", q);
+    if (day) params.set("day", day);
+    if (distance) params.set("distance", distance);
+
+    var newUrl = window.location.pathname + (params.toString() ? "?" + params.toString() : "");
+    history.replaceState(null, "", newUrl);
+  }
+
   function update() {
     var filtered = search.getFiltered();
     map.addClubs(filtered);
     map.fitToMarkers();
     renderCards(filtered);
     updateResultCount(filtered.length, search.allClubs.length);
+    writeUrlParams();
   }
 
   function renderCards(clubs) {
@@ -200,10 +251,23 @@
     return div.innerHTML;
   }
 
+  // Toggle shadow on filter bar when sidebar is scrolled
+  function initSidebarScroll() {
+    var sidebar = document.getElementById("sidebar");
+    if (!sidebar) return;
+    sidebar.addEventListener("scroll", function () {
+      sidebar.classList.toggle("sidebar--scrolled", sidebar.scrollTop > 0);
+    });
+  }
+
   // Start
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", function () {
+      init();
+      initSidebarScroll();
+    });
   } else {
     init();
+    initSidebarScroll();
   }
 })();

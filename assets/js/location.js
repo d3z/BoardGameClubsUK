@@ -13,6 +13,7 @@
     pillLabel: null,
     clearBtn: null,
     locateBtn: null,
+    locateBtnHeader: null,
     debounceTimer: null,
     onLocationSet: null,
     onLocationClear: null,
@@ -29,6 +30,7 @@
       this.pillLabel = document.getElementById("location-pill-label");
       this.clearBtn = document.getElementById("location-clear");
       this.locateBtn = document.getElementById("locate-btn");
+      this.locateBtnHeader = document.getElementById("locate-btn-header");
 
       if (!this.input && !this.inputMobile) return this;
 
@@ -84,6 +86,12 @@
 
       if (this.locateBtn) {
         this.locateBtn.addEventListener("click", function () {
+          self.geolocate();
+        });
+      }
+
+      if (this.locateBtnHeader) {
+        this.locateBtnHeader.addEventListener("click", function () {
           self.geolocate();
         });
       }
@@ -160,6 +168,11 @@
         });
     },
 
+    setLocateBtnsDisabled: function (disabled) {
+      if (this.locateBtn) this.locateBtn.disabled = disabled;
+      if (this.locateBtnHeader) this.locateBtnHeader.disabled = disabled;
+    },
+
     geolocate: function () {
       var self = this;
 
@@ -168,21 +181,21 @@
         return;
       }
 
-      this.locateBtn.disabled = true;
+      self.setLocateBtnsDisabled(true);
 
       navigator.geolocation.getCurrentPosition(
         function (pos) {
           var lat = pos.coords.latitude;
           var lng = pos.coords.longitude;
           self.setActive("My location");
-          self.locateBtn.disabled = false;
+          self.setLocateBtnsDisabled(false);
 
           if (self.onLocationSet) {
             self.onLocationSet(lat, lng, "My location");
           }
         },
         function () {
-          self.locateBtn.disabled = false;
+          self.setLocateBtnsDisabled(false);
           alert("Unable to retrieve your location.");
         }
       );

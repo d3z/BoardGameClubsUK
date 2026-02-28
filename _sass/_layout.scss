@@ -130,15 +130,18 @@
     display: none;
 
     @media (min-width: $bp-lg) {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       flex: 1;
-      max-width: 480px;
+      max-width: 580px;
       position: relative;
       z-index: 1001;
     }
 
     .search-bar {
       margin-bottom: 0;
+      flex: 1;
     }
 
     .search-input {
@@ -302,6 +305,11 @@
     padding: 14px 0 10px;
     cursor: grab;
     touch-action: none;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+    background: $color-surface;
+    border-radius: 14px 14px 0 0;
 
     &:active {
       cursor: grabbing;
