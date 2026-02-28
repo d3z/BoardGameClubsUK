@@ -17,5 +17,6 @@ facebook: "https://facebook.com/groups/20385775157/"
 discord: "https://discord.gg/DMckY2FdX"
 bgg: ""
 description: >-
-  North Wales Tabletop Games Club's monthly Sunday session — a full day of board games, card games, and tabletop gaming. All welcome.
+  North Wales Tabletop Games Club's monthly Sunday session — a full day of
+  board games, card games, and tabletop gaming. All welcome.
 ---

@@ -1,7 +1,7 @@
 ---
-name: "Longrest Boardgame Bar + Cafe (Thursdays)"
-day: "Thursday"
-secondary_days: []
+name: "Longrest Boardgame Bar + Cafe"
+day: "Monday"
+secondary_days: ["Thursday"]
 time: ""
 frequency: "Weekly"
 location:
@@ -18,4 +18,5 @@ discord: ""
 bgg: ""
 description: >-
   Board game evenings at Longrest Boardgame Bar + Cafe in Stoke-on-Trent.
+  Meets Mondays and Thursdays.
 ---

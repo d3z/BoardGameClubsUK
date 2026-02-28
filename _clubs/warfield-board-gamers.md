@@ -1,7 +1,7 @@
 ---
-name: "Warfield Board Gamers (Wednesdays)"
+name: "Warfield Board Gamers"
 day: "Wednesday"
-secondary_days: []
+secondary_days: ["Friday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"
 location:
@@ -18,6 +18,6 @@ discord: ""
 bgg: ""
 description: >-
   Warfield Board Gamers meet at The Gaming Hub, hosted at Bracknell Methodist
-  Church. Wednesday sessions run from 7pm to 11pm. Contact
+  Church. Sessions run Wednesdays and Fridays, 7pm to 11pm. Contact
   bracknellgaming@gmail.com for payment info and further details.
 ---

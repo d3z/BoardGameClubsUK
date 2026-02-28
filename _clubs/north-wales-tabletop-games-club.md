@@ -1,7 +1,7 @@
 ---
-name: "North Wales Tabletop Games Club (Wednesdays)"
-day: "Wednesday"
-secondary_days: []
+name: "North Wales Tabletop Games Club"
+day: "Monday"
+secondary_days: ["Wednesday", "Thursday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"
 location:
@@ -17,5 +17,6 @@ facebook: "https://facebook.com/groups/20385775157/"
 discord: "https://discord.gg/DMckY2FdX"
 bgg: ""
 description: >-
-  North Wales Tabletop Games Club meets multiple times a week for board games, card games, and tabletop gaming. All welcome.
+  North Wales Tabletop Games Club meets multiple times a week for board games,
+  card games, and tabletop gaming. All welcome.
 ---
