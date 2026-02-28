@@ -7,11 +7,11 @@ frequency: "Weekly"
 location:
   name: "Bruntcliffe Working Men's Club"
   address: "Bruntcliffe Road, Morley, Leeds LS27 0LQ"
-  lat: 53.7432
-  lng: -1.6223
+  lat: 53.7440911
+  lng: -1.6236668
 cost: "Free"
 age_restriction: ""
-image: "south_leeds.png"
+image: "slbg.png"
 website: "https://www.slbg.club"
 facebook: "https://www.facebook.com/groups/973046293469333"
 discord: "https://discord.gg/vEvyCPNguJ"

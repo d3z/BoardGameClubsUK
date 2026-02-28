@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "The George Inn"
   address: "Selby"
-  lat: 53.7816
-  lng: -1.0703
+  lat: 53.7841571
+  lng: -1.0684888
 cost: "Free"
 age_restriction: ""
 website: ""

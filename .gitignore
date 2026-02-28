@@ -9,3 +9,5 @@ Gemfile.lock
 *.swo
 CLAUDE.md
 .claude/
+.env
+scripts/geocode.rb

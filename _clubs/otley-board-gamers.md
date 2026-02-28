@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "The Yew Tree Inn"
   address: "Newall Carr Road, Otley"
-  lat: 53.9048
-  lng: -1.6907
+  lat: 53.9131797
+  lng: -1.6975051
 cost: "Free"
 age_restriction: ""
 website: ""

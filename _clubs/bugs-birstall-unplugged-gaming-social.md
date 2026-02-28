@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "Black Bull Inn"
   address: "Kirkgate, Birstall, Batley"
-  lat: 53.7333
-  lng: -1.6635
+  lat: 53.7312903
+  lng: -1.6710933
 cost: "Free"
 age_restriction: ""
 website: ""

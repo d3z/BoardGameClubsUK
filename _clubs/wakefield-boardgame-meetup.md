@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "Living Realms"
   address: "Sagar Street, Castleford WF10 1AG"
-  lat: 53.7254
-  lng: -1.3558
+  lat: 53.7267904
+  lng: -1.3513827
 cost: "£2.50"
 age_restriction: ""
 website: ""

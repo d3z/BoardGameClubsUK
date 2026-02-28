@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "St. James' Church"
   address: "Thornton Road, Thornton, Bradford"
-  lat: 53.7863
-  lng: -1.8387
+  lat: 53.790852
+  lng: -1.8413476
 cost: "Free"
 age_restriction: ""
 website: "https://www.boardinthevillage.co.uk/"

@@ -11,7 +11,8 @@ location:
   lng: -1.9054
 cost: "Free"
 age_restriction: ""
-website: "http://www.calderdalegamers.co.uk"
+image: "calederdale.jpg"
+website: ""
 facebook: "https://www.facebook.com/groups/525159429162206"
 description: >-
   Weekly group focused on modern designer board games. All games supplied by

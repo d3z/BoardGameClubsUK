@@ -11,6 +11,7 @@ location:
   lng: -1.0918
 cost: "Free"
 age_restriction: ""
+image: "Bm-york.jpg"
 website: "https://bmyork.wordpress.com/"
 facebook: "https://www.facebook.com/beyond.monopoly"
 description: >-

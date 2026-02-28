@@ -7,8 +7,8 @@ frequency: "Weekly"
 location:
   name: "Leodis Games"
   address: "Bagley Lane, Farsley, Leeds"
-  lat: 53.8098
-  lng: -1.6733
+  lat: 53.8169136
+  lng: -1.6653699
 cost: "Free"
 age_restriction: ""
 website: ""

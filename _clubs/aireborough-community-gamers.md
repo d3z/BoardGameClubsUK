@@ -7,10 +7,11 @@ frequency: "Weekly"
 location:
   name: "Rawdon Community Library"
   address: "Micklefield Park, New Road Side, Rawdon, Leeds LS19 6DD"
-  lat: 53.8467
-  lng: -1.6833
+  lat: 53.853655
+  lng: -1.686174
 cost: "Free"
 age_restriction: ""
+image: "airborough.jpg"
 website: ""
 facebook: "https://www.facebook.com/groups/AireboroughCommunityGamers"
 description: >-

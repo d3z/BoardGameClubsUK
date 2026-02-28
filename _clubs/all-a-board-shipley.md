@@ -11,6 +11,7 @@ location:
   lng: -1.7833
 cost: "Free"
 age_restriction: ""
+image: "all-a-board.jpg"
 website: ""
 facebook: "https://www.facebook.com/groups/allaboardshipley"
 description: >-

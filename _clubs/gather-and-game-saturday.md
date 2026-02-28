@@ -7,8 +7,8 @@ frequency: "Fortnightly"
 location:
   name: "St Georges Church Hall"
   address: "York Street, Barnsley S70 1BD"
-  lat: 53.5546
-  lng: -1.4798
+  lat: 53.5510965
+  lng: -1.4862051
 cost: "Free"
 age_restriction: ""
 website: ""
